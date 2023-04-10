@@ -1,24 +1,18 @@
-
 import express from "express"; // "type": "module"
 import { MongoClient } from 'mongodb'
 import * as dotenv from 'dotenv'
 import cors from "cors";
 import shortid from "shortid";
-import { nanoid } from 'nanoid'
 
-// import nanoid from "nanoid";
-// import nodeid from 'node-id';
-// import mongoose from "mongoose";
-// const shortid = require('shortid');
 dotenv.config()
 const app = express();
 
 // console.log(process.env.mongo_url)
 
-// const PORT = process.env.PORT;
-const PORT = 2207
-const mongo_url = 'mongodb://127.0.0.1';
-// const mongo_url =(process.env.mongo_url)
+const PORT = process.env.PORT;
+// const PORT = 2207
+// const mongo_url = 'mongodb://127.0.0.1';
+const mongo_url =(process.env.mongo_url)
 export const client = new MongoClient(mongo_url);
 await client.connect();
   console.log('mongo is connected!!');
@@ -74,6 +68,6 @@ app.post('/api/shorten', async (req, res) => {
     res.redirect(url.originalUrl);
   });
   
+
  
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
-
