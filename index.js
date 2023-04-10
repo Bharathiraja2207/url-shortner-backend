@@ -58,7 +58,7 @@ app.post('/api/shorten', async (req, res) => {
     const url = await client
     .db("urlshortner")
     .collection("urlshortner")
-    .findOne({ shortUrl: `http://localhost:2207/${shortId}` });
+    .findOne({ shortUrl: `https://url-shortner-backend-wine.vercel.app/${shortId}` });
   
     if (!url) {
       return res.status(404).send('URL not found');
