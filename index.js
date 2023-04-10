@@ -46,7 +46,7 @@ app.post('/api/shorten', async (req, res) => {
     // Return shortened URL
     res.json({
         originalUrl: url,
-        shortUrl: `http://localhost:2207/${shortId}`,
+        shortUrl: `https://url-shortner-backend-wine.vercel.app/${shortId}`,
       });
     }else{res.status(400).json({ message: 'url not defind' })}
   });
