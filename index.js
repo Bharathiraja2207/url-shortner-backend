@@ -39,7 +39,7 @@ app.post('/api/shorten', async (req, res) => {
     .collection("urlshortner")
      .insertOne({
       originalUrl: url,
-      shortUrl: `http://localhost:2207/${shortId}`,
+      shortUrl: `https://url-shortner-backend-wine.vercel.app/${shortId}`,
     });
     // await newUrl.save();
   
